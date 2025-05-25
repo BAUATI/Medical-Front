@@ -1,0 +1,27 @@
+<div class="card bg-base-100 shadow-sm">
+  <div class="card-body">
+    <span class="badge badge-xs badge-warning">
+      {{ historia.diagnostico ? "Con diagnóstico" : "Sin diagnóstico" }}
+    </span>
+
+    <div class="flex justify-between items-center">
+      <h2 class="text-lg font-bold">{{ historia.paciente.nombre }}</h2>
+      <span class="text-sm text-gray-500">{{ historia.paciente.cedula }}</span>
+    </div>
+
+    <ul class="mt-4 text-sm space-y-1">
+      <li><strong>Motivo:</strong> {{ historia.motivo_consulta }}</li>
+      <li><strong>Diagnóstico:</strong> {{ historia.diagnostico }}</li>
+      <li><strong>Tratamiento:</strong> {{ historia.tratamiento }}</li>
+      <li>
+        <strong>Fecha:</strong> {{ historia.fecha | date : "mediumDate" }}
+      </li>
+    </ul>
+
+    <div class="mt-4">
+      <button class="btn btn-outline btn-primary w-full" (click)="onEditar()">
+        Más información
+      </button>
+    </div>
+  </div>
+</div>
